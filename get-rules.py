@@ -6,9 +6,9 @@
 import requests
 
 # import username and password
-import creds
-keygen = creds.keygen
-print (keygen)
+# import creds
+# keygen = creds.keygen
+# print (keygen)
 
 r = requests.get('https://github.com/timeline.json')
 print (r.json())
