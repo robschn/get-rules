@@ -10,5 +10,5 @@ import creds
 keygen = creds.keygen
 print (keygen)
 
-r = requests.get('https://github.com/timeline.json')
-print (r.json())
+r = requests.get('https://pan.rollins.edu//api/?type=op&cmd=<show><system><info></info></system></show>&key=' + keygen)
+print (r.xml())
