@@ -10,5 +10,5 @@ import creds
 keygen = creds.keygen
 print (keygen)
 
-r = requests.get('https://pan.rollins.edu//api/?type=op&cmd=<show><system><info></info></system></show>&output-format=json&key=' + keygen, verify=False)
+r = requests.get('https://pan.rollins.edu//api/?type=op&cmd=<show><system><info></info></system></show>&key=' + keygen, verify=False)
 print (r.content)
