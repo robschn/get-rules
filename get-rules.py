@@ -8,7 +8,7 @@ import json
 import xmltodict
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-# imports keygen
+# import keygen
 import creds
 
 # disables SSL cert warning
@@ -30,7 +30,6 @@ dict = xmltodict.parse(content, dict_constructor=dict)
 system = dict['response']['result']['system']
 
 print (system['wildfire-release-date'])
-
 
 # XML with installing another library
 # from xml.etree import ElementTree
