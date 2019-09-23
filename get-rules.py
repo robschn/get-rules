@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Requires Python3 and xmltodict
+# Requires Python3, requests and xmltodict
 
 # imports
 import requests
