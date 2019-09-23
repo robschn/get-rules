@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Requires Python3, requests and xmltodict
+# requires Python3, requests and xmltodict
 
 # imports
 import requests
@@ -20,7 +20,7 @@ command = '<show><system><info></info></system></show>'
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # send command
-r = requests.get(url+ '/api/?type=op&cmd=' +command+ '&key=' + keygen, verify=False)
+r = requests.get(url+ '/api/?type=op&cmd=' +command+ '&key=' +keygen, verify=False)
 content =  r.content
 
 # parses XML straigh to JSON format
