@@ -8,17 +8,25 @@ import json
 import xmltodict
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
-# import username and password
+# imports keygen
 import creds
-keygen = creds.keygen
 
+# disables SSL cert warning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-r = requests.get('https://pan.rollins.edu//api/?type=op&cmd=<show><system><info></info></system></show>&key=' + keygen, verify=False)
+# definitions
+keygen = creds.keygen
+url = 'URL'
+command = '<show><system><info></info></system></show>'
+
+# send command
+r = requests.get(url+ '/api/?type=op&cmd=' +command+ '&key=' + keygen, verify=False)
 content =  r.content
 
+# parses XML straigh to JSON format
 dict = xmltodict.parse(content, dict_constructor=dict)
 
+# combines headers so we can search for the data inside system
 system = dict['response']['result']['system']
 
 print (system['wildfire-release-date'])
