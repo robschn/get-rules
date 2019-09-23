@@ -11,13 +11,13 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 # import keygen
 import creds
 
-# disables SSL cert warning
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
-
 # definitions
 keygen = creds.keygen
-url = 'URL'
+url = 'https://pan.rollins.edu'
 command = '<show><system><info></info></system></show>'
+
+# disables SSL cert warning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # send command
 r = requests.get(url+ '/api/?type=op&cmd=' +command+ '&key=' + keygen, verify=False)
